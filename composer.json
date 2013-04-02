@@ -1,0 +1,13 @@
+{
+    "name": "paysera/yourls-php-client",
+    "description": "yourls.org API PHP client",
+    "authors": [
+        {
+            "name": "paysera.com",
+            "homepage": "http://www.paysera.com/"
+        }
+    ],
+    "autoload": {
+        "classmap": ["src/"]
+    }
+}
