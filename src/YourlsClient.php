@@ -117,6 +117,13 @@ class YourlsClient
     public function shorten($url, $keyword = null)
     {
         $result = $this->call(self::ACTION_SHORTURL, array('url' => $url, 'keyword' => $keyword));
+        if (empty($result['status']) || $result['status'] == 'fail') {
+            throw new YourlsClient_Exception(
+                isset($result['message'])
+                    ? $result['message']
+                    : sprintf('Could not shorten url address %s [%s]', $url, $keyword)
+            );
+        }
         return $result['shorturl'];
     }
 
