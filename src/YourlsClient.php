@@ -177,7 +177,7 @@ class YourlsClient
         $params['action'] = $action;
         if ($this->username) {
             $params['username'] = $this->username;
-            $params['password'] = $this->username;
+            $params['password'] = $this->password;
         } else {
             $params['timestamp'] = time();
             $params['signature'] = md5($this->token . $params['timestamp']);
